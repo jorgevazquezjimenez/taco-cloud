@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.extern.slf4j.Slf4j;
 import tacos.domain.Ingredient;
 import tacos.domain.Ingredient.Type;
+import tacos.domain.Order;
 import tacos.domain.Taco;
 
 @Slf4j
@@ -49,9 +50,9 @@ public class DesignTacoController {
 	}
 	
 	@PostMapping
-	public String processDesign(Design design) {
+	public String processDesign(Taco taco) {
 		// TODO - Save the Taco design...
-		log.info("Processing design: " + design);
+		log.info("Processing taco: " + taco);
 		return "redirect:/orders/current";
 	}
 
