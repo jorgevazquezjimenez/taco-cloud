@@ -5,6 +5,7 @@ import java.sql.Types;
 import java.util.Arrays;
 import java.util.Date;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -18,6 +19,7 @@ import tacos.domain.Taco;
 import tacos.repository.TacoRepository;
 
 @Repository
+@Slf4j
 public class JdbcTacoRepository implements TacoRepository {
 
 	private JdbcTemplate jdbc;
