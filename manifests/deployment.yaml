@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    deployment.kubernetes.io/revision: "1"
+    openshift.io/generated-by: OpenShiftWebConsole
+  labels:
+    app: taco-cloud
+    app.kubernetes.io/component: taco-cloud
+    app.kubernetes.io/instance: taco-cloud
+    app.kubernetes.io/part-of: taco-cloud-app
+    app.openshift.io/runtime-namespace: gitops-demo
+  name: taco-cloud
+  namespace: gitops-demo
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: taco-cloud
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: taco-cloud
+        deploymentconfig: taco-cloud
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/gitops-demo/taco-cloud@sha256:69de8b89b39787c277662e5f1e12baeba3837532df97f8a9940798ff5073072d
+        imagePullPolicy: IfNotPresent
+        name: taco-cloud
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
