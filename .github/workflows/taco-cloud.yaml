@@ -33,3 +33,5 @@ jobs:
           name: taco-cloud
       - name: Check paths
         run: ls -lha
+      - name: Check staging folder
+        run: cd staging && ls -lha
