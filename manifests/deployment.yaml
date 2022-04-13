@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   annotations:
     alpha.image.policy.openshift.io/resolve-names: '*'
-    deployment.kubernetes.io/revision: "1"
     openshift.io/generated-by: OpenShiftWebConsole
   labels:
     app: taco-cloud
