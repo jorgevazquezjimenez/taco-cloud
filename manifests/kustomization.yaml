@@ -24,6 +24,6 @@ images:
 namespace: argocd
 
 replicas:
-- count: 3
+- count: 1
   name: taco-cloud
 nameSuffix: -playground
