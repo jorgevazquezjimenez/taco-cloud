@@ -23,8 +23,3 @@ images:
   name: app-image
   newName: docker.io/georgevazj/taco-cloud
 namespace: argocd
-
-replicas:
-- count: 3
-  name: taco-cloud
-nameSuffix: -playground
