@@ -13,7 +13,7 @@ metadata:
   namespace: gitops-demo
 spec:
   ports:
-  - name: 8080-tcp
+  - name: http
     port: 8080
   selector:
     app: taco-cloud
