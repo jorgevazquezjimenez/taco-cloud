@@ -19,7 +19,7 @@ commonAnnotations:
   team: sanacloud
 
 images:
-- digest: sha256:6148cfd002a782b9be43d5bbe3b078a0b745d600891b1ad83802699397cb440e
+- digest: sha256:bef4e6ee93c4384bd74ff81715a7020e2771cf3ac59b0e02dc2a17878b23543d
   name: app-image
   newName: docker.io/georgevazj/taco-cloud
 namespace: argocd
