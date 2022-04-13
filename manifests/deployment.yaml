@@ -35,7 +35,7 @@ spec:
         deploymentconfig: taco-cloud
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/gitops-demo/taco-cloud@sha256:69de8b89b39787c277662e5f1e12baeba3837532df97f8a9940798ff5073072d
+      - image: app-image
         imagePullPolicy: IfNotPresent
         name: taco-cloud
         ports:
