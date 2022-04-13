@@ -47,7 +47,7 @@ jobs:
           name: taco-cloud
 
       - name: Check staging folder
-        run: cd staging && ls -lha
+        run: cd taco-cloud && ls -lha
 
       - name: Determine app name
         if: env.APP_NAME == ''
