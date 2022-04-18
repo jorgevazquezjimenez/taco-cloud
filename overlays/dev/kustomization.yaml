@@ -1,6 +1,3 @@
-bases:
-  - ../../base
-
 commonLabels:
   variant: development
 
@@ -9,7 +6,7 @@ commonAnnotations:
   source: kustomize
   team: sanacloud
 
-namePrefix: poc-
-nameSuffix: -dev
-patchesStrategicMerge:
-  - deployment.yaml
+namePrefix: dev-
+
+bases:
+  - ../../base
