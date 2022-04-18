@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- deployment.yaml
+- route.yaml
+- service.yaml
+
+labels:
+- pairs:
+    kind: front
+    lang: spring
+    project: taco-cloud
+    region: westeurope
+
+commonAnnotations:
+  description: Taco Cloud project
+  source: kustomize
+  team: sanacloud
+
+images:
+- digest: sha256:fe41c3076659057b1eb73f29ccb5f97e7ba09b31066759945a3d389155eeb92b
+  name: app-image
+  newName: docker.io/georgevazj/taco-cloud
+namespace: argocd

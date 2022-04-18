@@ -4,4 +4,4 @@ bases:
 replicas:
   - count: 3
     name: taco-cloud
-nameSuffix: -staging
+nameSuffix: -prod

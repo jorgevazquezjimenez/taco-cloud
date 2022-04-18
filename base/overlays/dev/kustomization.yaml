@@ -1,0 +1,14 @@
+bases:
+  - ../../base
+
+commonLabels:
+  variant: development
+
+commonAnnotations:
+  description: Taco Cloud project
+  source: kustomize
+  team: sanacloud
+
+nameSuffix: -dev
+patchesStrategicMerge:
+  - deployment.yaml

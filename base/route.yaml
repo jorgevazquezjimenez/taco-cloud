@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  labels:
+    app: taco-cloud
+    app.kubernetes.io/component: taco-cloud
+    app.kubernetes.io/instance: taco-cloud
+    app.kubernetes.io/part-of: taco-cloud-app
+    app.openshift.io/runtime-version: 162933a05bfbf67ba021a330b508d6767cc0f9dd
+  name: taco-cloud
+  namespace: gitops-demo
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: sanacloud-taco-cloud-poc
+    weight: 100
+  wildcardPolicy: None
