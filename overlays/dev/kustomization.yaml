@@ -9,6 +9,7 @@ commonAnnotations:
   source: kustomize
   team: sanacloud
 
+namePrefix: poc-
 nameSuffix: -dev
 patchesStrategicMerge:
   - deployment.yaml
